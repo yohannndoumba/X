@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entreprise X</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background: linear-gradient(to right, #f1faee, #e0fbfc);
+    }
+
+    header {
+      background: #1d3557;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #1d3557;
+      font-size: 1.8rem;
+    }
+
+    #accueil {
+      background: url('https://images.unsplash.com/photo-1581093588401-22033c84b4d0') no-repeat center/cover;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    #accueil p {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    #services ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    #services li {
+      flex: 1 1 30%;
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #services li i {
+      margin-right: 0.5rem;
+      color: #457b9d;
+    }
+
+    #contact p, #contact form {
+      margin-bottom: 1rem;
+    }
+
+    #contact form input, #contact form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #contact form button {
+      background: #1d3557;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #contact form button:hover {
+      background: #457b9d;
+    }
+
+    footer {
+      background: #1d3557;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      #services ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Entreprise X</h1>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="accueil">
+    <h2>Bienvenue chez Entreprise X</h2>
+    <p>Nous fournissons des solutions numériques avancées pour la gestion clientèle, la comptabilité et les ressources humaines.</p>
+  </section>
+
+  <section id="services">
+    <h2>Nos Services</h2>
+    <ul>
+      <li><i class="fas fa-users"></i> Gestion de la clientèle (CRM)</li>
+      <li><i class="fas fa-file-invoice-dollar"></i> Gestion de la comptabilité (ERP)</li>
+      <li><i class="fas fa-people-carry"></i> Gestion des ressources humaines (RH)</li>
+    </ul>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos de nous</h2>
+    <p>Entreprise X est une société innovante basée à Dakar, spécialisée dans la digitalisation des processus de gestion des PME et grandes entreprises.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <p><i class="fas fa-envelope"></i> contact@entreprisex.com</p>
+    <p><i class="fas fa-phone"></i> +221 77 000 00 00</p>
+    <p><i class="fas fa-map-marker-alt"></i> Zone industrielle, Dakar</p>
+
+    <form id="contactForm">
+      <input type="text" id="nom" placeholder="Votre nom" required />
+      <input type="email" id="email" placeholder="Votre email" required />
+      <textarea id="message" rows="5" placeholder="Votre message..." required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Entreprise X. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Validation simple
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nom = document.getElementById("nom").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!nom || !email || !message) {
+        alert("Veuillez remplir tous les champs.");
+        return;
+      }
+
+      alert("Merci pour votre message ! Nous vous contacterons rapidement.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
